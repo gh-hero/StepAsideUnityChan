@@ -962,7 +962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717945992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 10}
+  m_LocalPosition: {x: 0, y: 1, z: -4.94}
   m_LocalScale: {x: 10, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -979,7 +979,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -1181,6 +1181,8 @@ MonoBehaviour:
     type: 3}
   conePrefab: {fileID: 1161378302348486095, guid: 105ae7c293bfb504aafde2dd8edb42fa,
     type: 3}
+  generateReference: {fileID: 1337964471}
+  spawnInterval: 3
 --- !u!4 &1152815572
 Transform:
   m_ObjectHideFlags: 0

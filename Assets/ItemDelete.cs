@@ -35,29 +35,26 @@ public class ItemDelete : MonoBehaviour
         //inputVelocityX,0inputVelocityY,this.velocityZとあるが、this.velocityZは変数名。中身は16f。3つの値に入れた数値だけ移動する。
         //x,y,zの順に対応している。
         this.myRigidbody.velocity = new Vector3(0, 0, this.velocityZ);
+    }
 
+    //トリガーモードで他のオブジェクトと接触した場合の処理
+    void OnTriggerEnter(Collider other)
+    {
 
-        //トリガーモードで他のオブジェクトと接触した場合の処理
-        void OnTriggerEnter(Collider other)
+        //障害物に衝突した場合（追加）
+        if (other.gameObject.tag == "CarTag" || other.gameObject.tag == "TrafficConeTag" || other.gameObject.tag == "CoinTag")
         {
+            Destroy(other.gameObject);
+        }
 
-            //障害物に衝突した場合（追加）
-            if (other.gameObject.tag == "CarTag" || other.gameObject.tag == "TrafficConeTag" || other.gameObject.tag == "CoinTag")
-            {
-                Destroy(other.gameObject);
-            }
-
-            //ゴール地点に到達した場合（追加）
-            if (other.gameObject.tag == "GoalTag")
-            {
-                this.isEnd = true;
-
-            }
-
+        //ゴール地点に到達した場合（追加）
+        if (other.gameObject.tag == "GoalTag")
+        {
+            this.isEnd = true;
 
         }
 
 
-
     }
+
 }
